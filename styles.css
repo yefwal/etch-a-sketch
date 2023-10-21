@@ -1,6 +1,10 @@
+body {
+  margin: none;
+  padding: none;
+}
+
 .header {
   display: flex;
-  align-items: center;
   justify-content: center;
   padding-bottom: 30px;
   font-weight: bolder;
@@ -9,11 +13,9 @@
 
 .main {
   display: flex;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
-  margin: 0 auto;
   gap: 100px;
-  max-width: 1100px;
 }
 
 #grid {
@@ -21,7 +23,6 @@
   width: 500px;
   height: 500px;
   border: 1px solid black;
-  justify-content: center;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
@@ -31,4 +32,16 @@
 
 .gridElement {
   border: 0.01px solid black;
+}
+
+#sliderContainer {
+  display: flex;
+
+  margin-top: 10px;
+  max-width: 150px;
+}
+
+#sliderOutput {
+  display: flex;
+  justify-content: center;
 }

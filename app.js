@@ -1,6 +1,15 @@
 const grid = document.querySelector("#grid");
 let isDrawing = false;
 
+const sliderValue = document.querySelector("input");
+sliderOutput.textContent = 16;
+sliderValue.value = 16;
+
+sliderValue.addEventListener("input", (e) => {
+  sliderOutput.textContent = e.target.value;
+  createGrid(e.target.value);
+});
+
 changeColor = (e) => {
   if (isDrawing) {
     e.target.style.backgroundColor = "black";
@@ -8,11 +17,15 @@ changeColor = (e) => {
 };
 
 createGrid = (size) => {
+  grid.innerHTML = "";
   grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
   grid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
   for (let i = 0; i < size * size; i++) {
     const gridElement = document.createElement("div");
+    gridElement.addEventListener("click", (e) => {
+      e.target.style.backgroundColor = "black";
+    });
     gridElement.addEventListener("mousedown", () => {
       isDrawing = true;
     });
@@ -28,12 +41,4 @@ createGrid = (size) => {
   }
 };
 
-createGrid(16);
-
-/* 
-
-Goal: create 16x16 grid 
-
-- print out rows of divs and columns of divs
-
-*/
+createGrid(sliderValue.value);
