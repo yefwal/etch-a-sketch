@@ -9,13 +9,16 @@
   <body>
     <div class="header">Etch-A-Sketch</div>
 
-    <div class="main">
-      <div id="grid"></div>
-    </div>
+    <div id="gridContainer"><div id="grid"></div></div>
 
-    <div id="sliderContainer">
-      <output id="sliderOutput"></output>
-      <input type="range" value="16" min="1" max="64" />
+    <div id="main">
+      <div id="colorChange">
+        <button id="random">Random Color</button>
+      </div>
+      <div id="slider">
+        <output id="sliderOutput"></output>
+        <input type="range" min="1" max="64" />
+      </div>
     </div>
 
     <script src="app.js" defer></script>
